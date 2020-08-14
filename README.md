@@ -20,7 +20,8 @@
 （2）使用vue中的this.$set(target,key,value)方法可实现把新增成员设置成响应式数据，该方法会重新调用Object.defineProperty()，监听新增加的成员。
  
 
-2、请简述 Diff 算法的执行过程
+###### 2、请简述 Diff 算法的执行过程
+
 答：Diff算法对新旧虚拟DOM进行比较，但只会进行同层级比较，不会跨层级比较，执行过程如下：
 （1）使用sameVnode方法比较 oldVnode和vnode，如果 vnode.key===oldVnode.key  &&  vnode.sel === oldVnode.sel，则继续向下比较，否则删除老的DOM节点,插入新的DOM节点。
 （2）当在第一步中确定两个节点值得比较后使用patchVnode方法进行比较：
@@ -39,8 +40,9 @@
  
  
 
-二、编程题
-1、模拟 VueRouter 的 hash 模式的实现，实现思路和 History 模式类似，把 URL 中的 # 后面的内容作为路由的地址，可以通过 hashchange 事件监听路由地址的变化。
+#####  二、编程题
+###### 1、模拟 VueRouter 的 hash 模式的实现，实现思路和 History 模式类似，把 URL 中的 # 后面的内容作为路由的地址，可以通过 hashchange 事件监听路由地址的变化。
+
 ```javascript
 let _Vue = null;
 export default class VueRouter {
@@ -129,7 +131,8 @@ export default class VueRouter {
 
 ```
 
-2、在模拟 Vue.js 响应式源码的基础上实现 v-html 指令，以及 v-on 指令。
+######  2、在模拟 Vue.js 响应式源码的基础上实现 v-html 指令，以及 v-on 指令。
+
 答：在compiler文件中实现v-html和v-on指令。
 ```javascript
 // 负责编译模板，解析指令和插值表达式
@@ -257,7 +260,7 @@ class Compliler {
 
  
 
-3、参考 Snabbdom 提供的电影列表的示例，利用Snabbdom 实现类似的效果，如图：
+######  3、参考 Snabbdom 提供的电影列表的示例，利用Snabbdom 实现类似的效果，如图：
 
 ```javascript
 import { init } from "./libs/snabbdom/build/package/init.js";
